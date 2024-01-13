@@ -14,6 +14,10 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
+@app.route('/')
+def index():
+    return '<h1>Frontend & Backend</h1>'
+
 @app.route('/messages')
 def messages():
     return ''
@@ -23,4 +27,4 @@ def messages_by_id(id):
     return ''
 
 if __name__ == '__main__':
-    app.run(port=5555)
+    app.run(port=5555, debug=True)
